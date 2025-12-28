@@ -2,7 +2,6 @@
 Création d'un jeu pour un projet à l'INSA
 
 # Source
-TEST
 https://cssgridgenerator.io/
 https://uiverse.io/
 https://animejs.com/
