@@ -1,0 +1,233 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+
+body{
+    height: 100vh;
+    display: grid;
+    place-items: center;
+    background-image: url("image/fond_espace.webp");
+    background-size: cover;
+}
+
+.img1, .img2 {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+}
+
+.img1 {
+    background-image: url("image/fond_espace.webp");
+}
+
+.img2 {
+    background-image: url("image/multicolor.webp");
+    mix-blend-mode: screen;
+}
+
+
+#game, #game2, #game3 {
+    border-radius: 3px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    background-color: rgb(255, 255, 255);
+    position: relative;
+    overflow-y: hidden;
+    outline: 1px solid #000;
+}
+
+#game {
+    width: 330px;
+    height: 530px;
+}
+
+#game2 {
+    width: 550px;
+    height: 530px;
+}
+
+#game3 {
+    width: 440px;
+    height: 600px;
+}
+
+
+#hero {
+    background-image: url("image/vaisseau.jpg");
+    height: 110px;
+    bottom: 0;
+    left: 110px;
+}
+
+
+#blocks, #blocks2, #blocks3, #blocks4, #blocks12, #blocks22, #blocks32, #blocks42, #hero {
+    width: 110px;
+    border-radius: 15px;
+    position: absolute;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    box-shadow: 0 4px 6px rgba(255, 0, 0, 0.5); /*ombre*/
+}
+
+#blocks, #blocks2/*, #blocks3*/{
+    animation: 1.5s movement infinite linear;
+}
+
+#blocks, #blocks12{
+    background-image: url("image/asteroide.jpg");
+    height: 110px;
+}
+
+
+#blocks2, #blocks22 {
+    background-image: url("image/trou_noir.jpg");
+    height: 55px;
+
+}
+
+/*#block3, #blocks32 {
+    background-image: url("image/trou_verre.jpg");
+    height: 220px;
+    box-shadow: 0 4px 6px rgba(255, 0, 0, 0.5);
+}*/
+
+
+#blocks4, #blocks42 {
+    background-image: url("image/soleil.jpg");
+    height: 110px;
+}
+
+
+#blocks4 {
+    animation: 1.5s movement2 infinite linear;
+}
+
+#blocks12 {
+    animation: 1.5s movement3 infinite linear;
+}
+
+#blocks22 {
+    animation: 1.5s movement4 infinite linear;
+}
+
+#blocks32 {
+    animation: 1.5s movement4 infinite linear;
+}
+
+
+#blocks42 {
+    animation: 1.5s movement5 infinite linear;
+}
+
+@keyframes movement {
+    0% {
+        top: -110px;
+    }
+
+    100% {
+        top: 530px;
+    }
+}
+
+@keyframes movement2 {
+    0% {
+        top: -110px;
+    }
+
+    60% {
+        top: 530px;
+    }
+    100% {
+        top: 530px;
+    }
+}
+
+@keyframes movement3 {
+    0% {
+        top: -110px;
+    }
+    50% {
+        top: 600px;
+    }
+    100% {
+        top: 600px;
+    }
+}
+
+@keyframes movement4 {
+    0% {
+        top: -330px;
+    }
+    65% {
+        top: 600px;
+    }
+    100% {
+        top: 600px;
+    }
+}
+
+@keyframes movement5 {
+    0% {
+        top: -1000px;
+    }
+    80% {
+        top: 600px;
+    }
+    100% {
+        top: 600px;
+    }
+}
+
+
+
+
+button {
+    text-align: center;
+    display: block;
+    background-color: #60c427;
+    cursor: pointer;
+    color: white;
+    font-size: 18px; /*taille texte*/
+    font-weight: 600; /* gras du texte*/
+    padding: 20px;
+    margin: 80px auto;
+    min-width: 150px; /*largeur minimale*/
+    position: relative;
+    /*bordure*/
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5); /*ombre*/
+}
+
+
+/*styles bouton*/
+.container {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+}
+
+/*styles lien*/
+.container a {  
+    text-decoration: none;
+}
+
+
+.container a button {
+    margin: 0;
+    padding: 12px 24px;
+}
+
+h1, h2{
+    text-align: center;
+    margin-bottom: 0;
+    padding:0;
+    color: black;
+}
