@@ -28,7 +28,7 @@ body{
 }
 
 .img2 {
-    background-image: url("image/multicolor.webp");
+    background-image: url("image/multicolor.jpg");
     mix-blend-mode: screen;
 }
 
@@ -36,7 +36,10 @@ body{
 #game, #game2, #game3 {
     border-radius: 3px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    background-color: rgb(255, 255, 255);
+    background-image: url("image/ciel.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
     position: relative;
     overflow-y: hidden;
     outline: 1px solid #000;
@@ -59,7 +62,7 @@ body{
 
 
 #hero {
-    background-image: url("image/vaisseau.jpg");
+    background-image: url("image/vaisseau.png");
     height: 110px;
     bottom: 0;
     left: 110px;
@@ -117,9 +120,9 @@ body{
     animation: 1.5s movement4 infinite linear;
 }
 
-#blocks32 {
+/*#blocks32 {
     animation: 1.5s movement4 infinite linear;
-}
+}*/
 
 
 #blocks42 {
