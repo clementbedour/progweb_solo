@@ -152,6 +152,7 @@ setInterval(function() {
         TIMER.innerText = '0';
         seconds = 0;
         character.style.left = '220px'; // reset au centre
+        window.alert("Vous avez perdu, réessayez !");
     }
   //block2
     if (heroPosition === block2Position && block2Top > 420 && block2Top < 600) {
@@ -160,6 +161,7 @@ setInterval(function() {
         TIMER.innerText = '0';
         seconds = 0;
         character.style.left = '220px'; // reset au centre
+        window.alert("Vous avez perdu, réessayez !");
     }
     if (heroPosition === block3Position && block3Top > 370 && block3Top < 600) {
         lost = true;
@@ -167,6 +169,7 @@ setInterval(function() {
         TIMER.innerText = '0';
         seconds = 0;
         character.style.left = '220px'; // reset au centre
+        window.alert("Vous avez perdu, réessayez !");
     }
     if (heroPosition === block4Position && block4Top > 420 && block4Top < 600) {
         lost = true;
@@ -174,6 +177,7 @@ setInterval(function() {
         TIMER.innerText = '0';
         seconds = 0;
         character.style.left = '220px'; // reset au centre
+        window.alert("Vous avez perdu, réessayez !");
     }
 
     console.log("hero:", heroPosition, "computed:", parseInt(getComputedStyle(character).left));

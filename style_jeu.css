@@ -12,7 +12,7 @@ body{
     background-size: cover;
 }
 
-.img1, .img2 {
+.img1, .img3, .img4, .img5 {
     position: fixed;
     top: 0;
     left: 0;
@@ -27,10 +27,21 @@ body{
     background-image: url("image/fond_espace.webp");
 }
 
-.img2 {
-    background-image: url("image/multicolor.jpg");
+.img3 {
+    background-image: url("image/vert.jpg");
     mix-blend-mode: screen;
 }
+
+.img4 {
+    background-image: url("image/orange.jpg");
+    mix-blend-mode: screen;
+}
+
+.img5 {
+    background-image: url("image/rouge.jpg");
+    mix-blend-mode: screen;
+}
+
 
 
 #game, #game2, #game3 {
@@ -79,12 +90,12 @@ body{
     box-shadow: 0 4px 6px rgba(255, 0, 0, 0.5); /*ombre*/
 }
 
-#blocks, #blocks2/*, #blocks3*/{
+#blocks, #blocks2, #blocks3{
     animation: 1.5s movement infinite linear;
 }
 
 #blocks, #blocks12{
-    background-image: url("image/asteroide.jpg");
+    background-image: url("image/etoile_mort.jpg");
     height: 110px;
 }
 
@@ -95,11 +106,11 @@ body{
 
 }
 
-/*#block3, #blocks32 {
+#blocks3, #blocks32 {
     background-image: url("image/trou_verre.jpg");
     height: 220px;
     box-shadow: 0 4px 6px rgba(255, 0, 0, 0.5);
-}*/
+}
 
 
 #blocks4, #blocks42 {
@@ -120,9 +131,9 @@ body{
     animation: 1.5s movement4 infinite linear;
 }
 
-/*#blocks32 {
+#blocks32 {
     animation: 1.5s movement4 infinite linear;
-}*/
+}
 
 
 #blocks42 {
@@ -194,7 +205,7 @@ body{
 button {
     text-align: center;
     display: block;
-    background-color: #60c427;
+    background-color: gray;
     cursor: pointer;
     color: white;
     font-size: 18px; /*taille texte*/

@@ -147,6 +147,7 @@ setInterval(function() {
         TIMER.innerText = '0';
         seconds = 0;
         character.style.left = '220px'; // reset au centre
+        window.alert("Vous avez perdu, réessayez !");
     }
 
   //block2
@@ -156,6 +157,7 @@ setInterval(function() {
         TIMER.innerText = '0';
         seconds = 0;
         character.style.left = '220px'; // reset au centre
+        window.alert("Vous avez perdu, réessayez !");
     }
     if (heroPosition === block3Position && block3Top > 200 && block3Top < 530) {
         lost = true;
@@ -163,6 +165,7 @@ setInterval(function() {
         TIMER.innerText = '0';
         seconds = 0;
         character.style.left = '220px'; // reset au centre
+        window.alert("Vous avez perdu, réessayez !");
     }
 
     if (heroPosition === block4Position && block4Top > 300 && block4Top < 530) {
@@ -171,6 +174,7 @@ setInterval(function() {
         TIMER.innerText = '0';
         seconds = 0;
         character.style.left = '220px'; // reset au centre
+        window.alert("Vous avez perdu, réessayez !");
     }
 }, 50);
 

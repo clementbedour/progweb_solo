@@ -123,6 +123,7 @@ setInterval(function() {
         TIMER.innerText = '0';
         seconds = 0;
         character.style.left = '110px'; // reset au centre
+        window.alert("Vous avez perdu, réessayez !");
     }
 
   //block2
@@ -132,6 +133,7 @@ setInterval(function() {
         TIMER.innerText = '0';
         seconds = 0;
         character.style.left = '110px'; // reset au centre
+        window.alert("Vous avez perdu, réessayez !");
     }
 }, 50);
 

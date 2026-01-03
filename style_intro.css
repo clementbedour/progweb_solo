@@ -93,7 +93,7 @@ h1, h2, h3{
 button {
     text-align: center;
     display: block;
-    background-color: #60c427;
+    background-color: gray;
     cursor: pointer;
     color: white;
     font-size: 18px; /*taille texte*/
@@ -183,4 +183,9 @@ button {
 
 .return-container button {
     margin: 0;
+}
+
+
+#ma-balise {
+    text-align: center;
 }
