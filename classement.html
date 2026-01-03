@@ -23,85 +23,31 @@
   </div>
 
 
-  <div class="div_C2">
+        <!-- Classement pour le niveau Facile -->
+        <div class="div_C2">
+            <h2>Facile — Top 5</h2>
+            <div class="scores-list" id="score-simple">
+                <!-- Les scores seront ajoutés ici dynamiquement -->
+            </div>
+        </div>
 
-    <h2>Facile — Top 5</h2>
-    <ul id="score-simple1"></ul>
-    <ul id="score-simple2"></ul>
-    <ul id="score-simple3"></ul>
-    <ul id="score-simple4"></ul>
-    <ul id="score-simple5"></ul>
-  </div>
-    
-    
-  <div class="div_C3">
-    <h2>Difficile — Top 5</h2>
-    <ul id="score-dur1"></ul>
-    <ul id="score-dur2"></ul>
-    <ul id="score-dur3"></ul>
-    <ul id="score-dur4"></ul>
-    <ul id="score-dur5"></ul>
-  </div>
+        <!-- Classement pour le niveau Difficile -->
+        <div class="div_C3">
+            <h2>Difficile — Top 5</h2>
+            <div class="scores-list" id="score-dur">
+                <!-- Les scores seront ajoutés ici dynamiquement -->
+            </div>
+        </div>
 
+        <!-- Classement pour le niveau Extreme -->
+        <div class="div_C4">
+            <h2>Extreme — Top 5</h2>
+            <div class="scores-list" id="score-ext">
+                <!-- Les scores seront ajoutés ici dynamiquement -->
+            </div>
+        </div>
+    </div>
 
-
-  <div class="div_C4">
-    <h2>Extreme — Top 5</h2>
-    <ul id="score-ext1"></ul>
-    <ul id="score-ext2"></ul>
-    <ul id="score-ext3"></ul>
-    <ul id="score-ext4"></ul>
-    <ul id="score-ext5"></ul>
-  </div>
-</div>
-
-
-<script>
-
-  const easyScores = JSON.parse(localStorage.getItem('Scores Easy')) || [];
-  const easyList = document.getElementById('score-simple');
-  
-  if (easyScores.length > 0) {
-    document.getElementById('score-simple1').innerHTML = `<li> 1er : ${easyScores[0] || '0'}</li>`;
-    document.getElementById('score-simple2').innerHTML = `<li> 2ème : ${easyScores[1] || '0'}</li>`;
-    document.getElementById('score-simple3').innerHTML = `<li> 3ème : ${easyScores[2] || '0'}</li>`;
-    document.getElementById('score-simple4').innerHTML = `<li> 4ème : ${easyScores[3] || '0'}</li>`;
-    document.getElementById('score-simple5').innerHTML = `<li> 5ème : ${easyScores[4] || '0'}</li>`;
-  } else {
-    easyList.innerHTML = '<li class="empty">Aucun score</li>';
-  }
-  
-
-
-
-  
-const hardScores = JSON.parse(localStorage.getItem('Scores Hard')) || [];
-const hardList = document.getElementById('score-dur');
-  
-  if (hardScores.length > 0) {
-    document.getElementById('score-dur1').innerHTML = `<li> 1er : ${hardScores[0] || '0'}</li>`;
-    document.getElementById('score-dur2').innerHTML = `<li> 2ème : ${hardScores[1] || '0'}</li>`;
-    document.getElementById('score-dur3').innerHTML = `<li> 3ème : ${hardScores[2] || '0'}</li>`;
-    document.getElementById('score-dur4').innerHTML = `<li> 4ème : ${hardScores[3] || '0'}</li>`;
-    document.getElementById('score-dur5').innerHTML = `<li> 5ème : ${hardScores[4] || '0'}</li>`;
-  } else {
-    easyList.innerHTML = '<li class="empty">Aucun score</li>';
-  }
-
-
-const extScores = JSON.parse(localStorage.getItem('Scores Ext')) || [];
-const extList = document.getElementById('score-ext');
-  
-  if (extScores.length > 0) {
-    document.getElementById('score-ext1').innerHTML = `<li> 1er : ${extScores[0] || '0'}</li>`;
-    document.getElementById('score-ext2').innerHTML = `<li> 2ème : ${extScores[1] || '0'}</li>`;
-    document.getElementById('score-ext3').innerHTML = `<li> 3ème : ${extScores[2] || '0'}</li>`;
-    document.getElementById('score-ext4').innerHTML = `<li> 4ème : ${extScores[3] || '0'}</li>`;
-    document.getElementById('score-ext5').innerHTML = `<li> 5ème : ${extScores[4] || '0'}</li>`;
-  } else {
-    easyList.innerHTML = '<li class="empty">Aucun score</li>';
-  }
-
-</script>
+    <script src="script_classement.js"></script>
 </body>
 </html>

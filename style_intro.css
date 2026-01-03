@@ -165,11 +165,26 @@ button {
     grid-column: span 3 / span 3;
 }
 
-
 .div_C2, .div_C3, .div_C4 {
     grid-row: span 3 / span 3;
     grid-row-start: 2;
     margin: 10px;
+}
+
+.scores-list {
+    font-size: 27px; /* Taille de police agrandie */
+    color: black;
+}
+
+.scores-list div {
+    padding: 0.75rem;
+    margin-bottom: 0.5rem;
+    border-radius: 5px;
+}
+
+
+.scores-list div:nth-child(even) {
+    background-color: rgba(230, 230, 230, 0.7);
 }
 
 
@@ -179,6 +194,7 @@ button {
     justify-content: center;
     gap: 10px;
     margin: 20px auto;
+    font-size: 27px;
 }
 
 .return-container button {
