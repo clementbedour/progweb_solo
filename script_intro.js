@@ -37,16 +37,16 @@ function afficherScores(niveau, idElement) {
 // Affiche les scores pour chaque niveau au chargement de la page
 document.addEventListener('DOMContentLoaded', () => {
     afficherScores('Scores Easy', 'score-simple');
-    afficherScores('Scores Hard', 'score-dur');
-    afficherScores('Scores Ext', 'score-ext');
+    afficherScores('Scores Difficile', 'score-dur');
+    afficherScores('Scores Extreme', 'score-ext');
 });
 
 
 submitButton.addEventListener('click', () => {
     if (nameInput.checkValidity()) {
         localStorage.setItem('playerName', nameInput.value);
-        alert("Nom enregistré : " + nameInput.value);
-    } else {
+    } 
+    else {
         alert("Veuillez entrer un nom valide !!!!");
     }
 });

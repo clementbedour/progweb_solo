@@ -5,9 +5,12 @@ const highScore = document.getElementById("top-score");
 
 
 const TIMER = document.getElementById("safeTimerDisplay");
+let timerId = null;
 
 let lost = true;
 let seconds = 0;
+
+let pop = false;
 
 // Nouvelles fonctions simples pour bouger
 function GoRight() {
@@ -92,7 +95,7 @@ function BlockMouvement() {
   //On mets 50% du temps block2 et si ligne diff alors apparition block2
     const apparition = Math.random();
     if (apparition>0.5) {
-        block2.style.left = -110 + 'px';
+        block2.style.left = -220 + 'px';
     }
     if (apparition<0.5) {
         const lanesblock2 = lanes[Math.floor(Math.random() * lanes.length)]
@@ -118,24 +121,13 @@ setInterval(function() {
   // Zone de collision 
   //block1
     if (heroPosition === blockPosition && blockTop > 300 && blockTop < 530) {
-        lost = true;
-        UpdateHighScore();
-        TIMER.innerText = '0';
-        seconds = 0;
-        character.style.left = '110px'; // reset au centre
-        window.alert("Vous avez perdu, réessayez !");
-    }
+        GameOver();
+}
 
   //block2
-    if (heroPosition === block2Position && block2Top > 350 && blockTop < 530) {
-        lost = true;
-        UpdateHighScore();
-        TIMER.innerText = '0';
-        seconds = 0;
-        character.style.left = '110px'; // reset au centre
-        window.alert("Vous avez perdu, réessayez !");
-    }
-}, 50);
+    if (heroPosition === block2Position && block2Top > 350 && block2Top < 530) {
+        GameOver();   
+}}, 50);
 
 
 
@@ -144,16 +136,18 @@ setInterval(function() {
 window.addEventListener('load', InitHS);
 
 
+
 function timer() {
-    var timer = setInterval(
-    function() {
-        document.getElementById("safeTimerDisplay").innerHTML = seconds;
-        seconds++;
-        if (seconds < 0) {
-            clearInterval(timer);
-        }
-    }, 1000);
+    timerId = setInterval(
+        function() {
+            document.getElementById("safeTimerDisplay").innerHTML = seconds;
+            seconds++;
+            if (seconds < 0) {
+                clearInterval(timerId);
+            }
+        }, 1000);
 }
+
 
 
 timer();
@@ -166,4 +160,52 @@ function InitHS() {
     else {
     highScore.innerText = scores[0];
     }
+}
+
+function GameOver() {
+    UpdateHighScore();
+    PauseAnimation();
+    TIMER.innerText = '0';
+    seconds = 0;
+    character.style.left = '110px';
+    lost = true;
+    PopDefaite();
+}
+
+
+function PauseAnimation() {
+    clearInterval(timerId); // stop timer
+    character.style.animationPlayState = 'paused';
+    block.style.animationPlayState = 'paused';
+    block2.style.animationPlayState = 'paused';
+}
+
+
+function PopDefaite() {
+    if (pop==false){
+        CreationPop();
+        pop = true;
+    };
+    const overlay = document.getElementById("pop");
+}
+
+function CreationPop() {
+
+    const overlay = document.createElement("div");
+    overlay.id = "pop";
+    overlay.className = "popup-overlay"; // Ajoute une classe pour le style
+
+        overlay.innerHTML = `
+        <div class="popup-content">
+            <h2>Vous avez perdu</h2>
+            <button id="rejouer">Rejouer</button>
+        </div>
+        `;
+
+
+    document.body.appendChild(overlay);
+
+    document.getElementById("rejouer").addEventListener("click", () => {
+        location.reload();
+    });
 }
