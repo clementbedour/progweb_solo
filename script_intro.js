@@ -1,3 +1,7 @@
+const nameInput = document.querySelector('#playerName');
+const submitButton = document.querySelector('#submitName');
+
+
 function afficherScores(niveau, idElement) {
     // Récupère les scores depuis le localStorage ou initialise un tableau vide
     let scores = JSON.parse(localStorage.getItem(niveau)) || [];
@@ -35,4 +39,14 @@ document.addEventListener('DOMContentLoaded', () => {
     afficherScores('Scores Easy', 'score-simple');
     afficherScores('Scores Hard', 'score-dur');
     afficherScores('Scores Ext', 'score-ext');
+});
+
+
+submitButton.addEventListener('click', () => {
+    if (nameInput.checkValidity()) {
+        localStorage.setItem('playerName', nameInput.value);
+        alert("Nom enregistré : " + nameInput.value);
+    } else {
+        alert("Veuillez entrer un nom valide !!!!");
+    }
 });

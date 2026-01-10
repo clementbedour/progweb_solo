@@ -3,51 +3,68 @@
 <head>
     <link rel="website icon" type="png" href="image/planete_logo.png">
     <link rel="stylesheet" href="style_intro.css">
-    <title>Planet Crasher</title>
+    <title>Wars Star</title>
 </head>
 
 
 <body>
-  <div class="img1">
+    <div class="img1">
         <div class="img2"></div>
-  </div>
-
-<div class="container-classement">
-  <div class="div_C1">
-    <h1>Classement</h1>
-
-    <div class="return-container">
-      <span>Retour à l'écran d'accueil :</span>
-      <a href="index2.html"><button>Écran d'accueil</button></a>
     </div>
-  </div>
+
+    <div class="container-classement">
+        <div class="div_C1">
+            <h1>Classement de : <span id="playerNameDisplay"></span></h1>
+
+            <div class="return-container">
+                <span>Retour à l'écran d'accueil :</span>
+                <a href="index2.html"><button>Écran d'accueil</button></a>
+            </div>
+        </div>
 
 
-        <!-- Classement pour le niveau Facile -->
+        <!-- Classement Facile -->
         <div class="div_C2">
             <h2>Facile — Top 5</h2>
             <div class="scores-list" id="score-simple">
-                <!-- Les scores seront ajoutés ici dynamiquement -->
+                <!-- Entrée ici -->
             </div>
         </div>
 
-        <!-- Classement pour le niveau Difficile -->
+        <!-- Classement Difficile -->
         <div class="div_C3">
             <h2>Difficile — Top 5</h2>
             <div class="scores-list" id="score-dur">
-                <!-- Les scores seront ajoutés ici dynamiquement -->
+                <!-- Entrée ici -->
             </div>
         </div>
 
-        <!-- Classement pour le niveau Extreme -->
+        <!-- Classement Extreme -->
         <div class="div_C4">
             <h2>Extreme — Top 5</h2>
             <div class="scores-list" id="score-ext">
-                <!-- Les scores seront ajoutés ici dynamiquement -->
+                <!-- Entrée ici -->
             </div>
         </div>
     </div>
 
-    <script src="script_classement.js"></script>
+    <script src="script_intro.js"></script>
+
+<script>
+// Récupère le nom depuis localStorage et l'affiche
+document.addEventListener('DOMContentLoaded', function() {
+    const playerName = localStorage.getItem('playerName');
+    const playerNameDisplay = document.getElementById('playerNameDisplay');
+
+    if (playerName) {
+        playerNameDisplay.textContent = playerName;
+    } else {
+        playerNameDisplay.textContent = "Joueur (Veuillez rentrez un nom à l'acceuil)";
+    }
+});
+
+</script>
+
+
 </body>
 </html>

@@ -24,22 +24,24 @@ body{
 }
 
 .img1 {
-    background-image: url("image/fond_espace.webp");
+    background-image: url("image/fond.jpeg");
 }
 
-.img3 {
-    background-image: url("image/vert.jpg");
+/*.img3 {
+    background-image: url("image/multicolor.jpg");
     mix-blend-mode: screen;
-}
+}*/
 
 .img4 {
     background-image: url("image/orange.jpg");
     mix-blend-mode: screen;
+    filter: invert(100%);
 }
 
-.img5 {
+.img3 {
     background-image: url("image/rouge.jpg");
     mix-blend-mode: screen;
+    filter: invert(100%);
 }
 
 
@@ -73,7 +75,8 @@ body{
 
 
 #hero {
-    background-image: url("image/vaisseau.png");
+    background-image: url("image/focon.jpg");
+    background-position: center;
     height: 110px;
     bottom: 0;
     left: 110px;
@@ -87,7 +90,7 @@ body{
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    box-shadow: 0 4px 6px rgba(255, 0, 0, 0.5); /*ombre*/
+    box-shadow: 0 4px 6px rgb(255, 255, 255,0.9); /*ombre*/
 }
 
 #blocks, #blocks2, #blocks3{
@@ -101,15 +104,14 @@ body{
 
 
 #blocks2, #blocks22 {
-    background-image: url("image/trou_noir.jpg");
+    background-image: url("image/TIE.jpg");
     height: 55px;
 
 }
 
 #blocks3, #blocks32 {
-    background-image: url("image/trou_verre.jpg");
+    background-image: url("image/croiseur.jpg");
     height: 220px;
-    box-shadow: 0 4px 6px rgba(255, 0, 0, 0.5);
 }
 
 
