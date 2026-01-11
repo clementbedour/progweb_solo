@@ -27,19 +27,14 @@ body{
     background-image: url("image/fond.jpeg");
 }
 
-/*.img3 {
-    background-image: url("image/multicolor.jpg");
-    mix-blend-mode: screen;
-}*/
-
-.img4 {
-    background-image: url("image/orange.jpg");
+.img3 {
+    background-image: url("image/rouge.jpg");
     mix-blend-mode: screen;
     filter: invert(100%);
 }
 
-.img3 {
-    background-image: url("image/rouge.jpg");
+.img4 {
+    background-image: url("image/orange.jpg");
     mix-blend-mode: screen;
     filter: invert(100%);
 }
@@ -90,7 +85,7 @@ body{
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    box-shadow: 0 4px 6px rgb(255, 255, 255,0.9); /*ombre*/
+    box-shadow: 0 4px 6px rgb(255, 255, 255,0.9);
 }
 
 #blocks, #blocks2, #blocks3{
@@ -218,7 +213,7 @@ button {
     position: relative;
     /*bordure*/
     border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5); /*ombre*/
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
 }
 
 
@@ -250,8 +245,6 @@ h1, h2{
 
 .popup-overlay {
     position: fixed;
-    width: 100%;
-    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -259,12 +252,18 @@ h1, h2{
 
 .popup-content {
     background-color: white;
-    padding: 10px;
+    padding: 15px;
     border-radius: 15px;
-    height: 90px;
+    height: auto;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
 }
 
 .popup-content button {
-    margin-top: 10px;
-    padding: 8px 16px;
+    margin: 5px;
+}
+
+.popup-content a {  
+    text-decoration: none;/*enlève soulignement liens*/
 }

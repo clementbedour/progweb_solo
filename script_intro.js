@@ -1,26 +1,20 @@
 const nameInput = document.querySelector('#playerName');
-const submitButton = document.querySelector('#submitName');
+const submitButton = document.querySelector('#validerValidation');
 
 
 function afficherScores(niveau, idElement) {
-    // Récupère les scores depuis le localStorage ou initialise un tableau vide
     let scores = JSON.parse(localStorage.getItem(niveau)) || [];
-    // Trie les scores par ordre décroissant
-    scores.sort((a, b) => b - a);
-    // Récupère l'élément HTML où afficher les scores
     const scoresList = document.getElementById(idElement);
-
-    // Efface le contenu actuel
     scoresList.innerHTML = '';
 
-    // Affiche les 5 meilleurs scores (ou "Aucun score" si vide)
     if (scores.length > 0) {
         for (let i = 0; i < 5; i++) {
             const score = scores[i];
             const scoreItem = document.createElement('div');
             if (score !== undefined) {
                 scoreItem.textContent = `Top ${i + 1} : ${score}`;
-            } else {
+            } 
+            else {
                 scoreItem.textContent = `Top ${i + 1} : Aucun score`;
                 scoreItem.classList.add('empty');
             }
@@ -28,7 +22,7 @@ function afficherScores(niveau, idElement) {
         }
     } else {
         const scoreItem = document.createElement('div');
-        scoreItem.textContent = 'Aucun score enregistré.';
+        scoreItem.textContent = 'Aucune partie jouée';
         scoreItem.classList.add('empty');
         scoresList.appendChild(scoreItem);
     }
@@ -42,11 +36,28 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
-submitButton.addEventListener('click', () => {
-    if (nameInput.checkValidity()) {
-        localStorage.setItem('playerName', nameInput.value);
-    } 
-    else {
-        alert("Veuillez entrer un nom valide !!!!");
+//Validation
+
+if (document.getElementById('validerValidation')) {
+    const nameInput = document.querySelector('#playerName');
+    const submitButton = document.querySelector('#validerValidation');
+
+    submitButton.addEventListener('click', () => {
+        if (nameInput.checkValidity()) {
+            localStorage.setItem('playerName', nameInput.value);
+        } else {
+            alert("Veuillez entrer un pseudo valide !!!!");
+        }
+    });
+}
+
+if (document.getElementById('playerNameDisplay')) {
+    const playerName = localStorage.getItem('playerName');
+    const playerNameDisplay = document.getElementById('playerNameDisplay');
+
+    if (playerName) {
+        playerNameDisplay.textContent = playerName;
+    } else {
+        playerNameDisplay.textContent = "Joueur (Veuillez entrer un nom à l'accueil)";
     }
-});
+}

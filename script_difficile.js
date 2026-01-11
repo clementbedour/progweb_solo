@@ -9,17 +9,12 @@ const TIMER = document.getElementById("safeTimerDisplay");
 let timerId = null;
 
 
-let lost = true;
+let lost = false;
 let seconds = 0;
 
 let pop = false;
 
-// Nouvelles fonctions simples pour bouger
 function GoRight() {
-    if (lost) {
-        lost = false;
-    }
-
     const posH = character.offsetLeft;
     if (posH < 440){
         character.style.left = (posH + 110) + 'px';
@@ -30,9 +25,6 @@ function GoRight() {
 }
 
 function GoLeft() {
-    if (lost) {
-        lost = false;
-    } 
     const posH = character.offsetLeft;
     if (posH > 0) {
         character.style.left = (posH - 110) + 'px';
@@ -43,47 +35,40 @@ function GoLeft() {
 }
 
 
-// Mise à jour du meilleur score
 function UpdateHighScore() {
     const current = parseInt(TIMER.innerText);
-  // Récupérer la liste des scores
     let scores = JSON.parse(localStorage.getItem('Scores Difficile')) || [];
-  // Ajouter le nouveau score
     scores.push(current);
 
-  // Trier du plus grand au plus petit
     scores.sort((a, b) => b - a);
-  // Garder seulement le top 5
     scores = scores.slice(0, 5);
-  // Sauvegarder
     localStorage.setItem('Scores Difficile', JSON.stringify(scores));
-  // Mettre à jour l'affichage du meilleur score actuel
     highScore.innerText = scores[0];
 }
 
 
 window.addEventListener("keydown", Mouvement);
-// Fonction dédiée à gérer le clavier
 function Mouvement(e) {
-    switch (e.key) {
-        case "ArrowRight":
-        case "d" :
-            GoRight();
-            break;
+    if (!lost){
+        switch (e.key) {
+            case "ArrowRight":
+            case "d" :
+                GoRight();
+                break;
 
         case "ArrowLeft":
-        case "q":
-            GoLeft();
-            break;
+            case "q":
+                GoLeft();
+                break;
+        };
     }
 }
 
 
-// Changement de voie du block
+
 block.addEventListener('animationiteration', BlockMouvement);
 
 function BlockMouvement() { 
-  //On trouve la ligne et on mets le block sur la ligne
     const lanes = [0, 110, 220,330,440];
     const lanesblock = lanes[Math.floor(Math.random() * lanes.length)]
     const lanesblock2 = lanes[Math.floor(Math.random() * lanes.length)]
@@ -93,16 +78,12 @@ function BlockMouvement() {
   //block
     block.style.left = lanesblock + 'px';
 
-  //blocks2blocks3.styl
     if (lanesblock2!=lanesblock) {
         blocks2.style.left = lanesblock2 + 'px';
     }
     else {
         blocks2.style.left = -220 + 'px';
     }
-
-  //block3 50% apparition
-    const apparition = Math.random();
 
     if (lanesblock3!=lanesblock && lanesblock3!=lanesblock2)  {
         blocks3.style.left = lanesblock3 + 'px';
@@ -121,7 +102,6 @@ function BlockMouvement() {
     }
 }
 
-//full gauche <=> full droite
 
 // Vérification collision
 setInterval(function() {
@@ -216,19 +196,20 @@ function PopDefaite() {
         CreationPop();
         pop = true;
     };
-    const overlay = document.getElementById("pop");
 }
 
 function CreationPop() {
 
     const overlay = document.createElement("div");
     overlay.id = "pop";
-    overlay.className = "popup-overlay"; // Ajoute une classe pour le style
+    overlay.className = "popup-overlay";
 
         overlay.innerHTML = `
         <div class="popup-content">
             <h2>Vous avez perdu</h2>
             <button id="rejouer">Rejouer</button>
+            <h2>Vous ne voulez pas rejouer</h2>
+            <a href="index2.html"><button>Ecran d'accueil</button></a>
         </div>
         `;
 
@@ -237,5 +218,6 @@ function CreationPop() {
 
     document.getElementById("rejouer").addEventListener("click", () => {
         location.reload();
+        lost = false;
     });
 }

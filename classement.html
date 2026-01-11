@@ -5,9 +5,10 @@
     <link rel="stylesheet" href="style_intro.css">
     <title>Wars Star</title>
 </head>
+
 <body>
+<!-- Fond Ecran -->
     <div class="img1">
-        <div class="img2"></div>
     </div>
 
     <div class="container-classement">
@@ -25,7 +26,7 @@
         <div class="div_C2">
             <h2>Facile — Top 5</h2>
             <div class="scores-list" id="score-simple">
-                <!-- Entrée ici -->
+
             </div>
         </div>
 
@@ -33,7 +34,7 @@
         <div class="div_C3">
             <h2>Difficile — Top 5</h2>
             <div class="scores-list" id="score-dur">
-                <!-- Entrée ici -->
+
             </div>
         </div>
 
@@ -41,28 +42,11 @@
         <div class="div_C4">
             <h2>Extreme — Top 5</h2>
             <div class="scores-list" id="score-ext">
-                <!-- Entrée ici -->
+
             </div>
         </div>
     </div>
 
     <script src="script_intro.js"></script>
-
-<script>
-// Récupère le nom depuis localStorage et l'affiche
-document.addEventListener('DOMContentLoaded', function() {
-    const playerName = localStorage.getItem('playerName');
-    const playerNameDisplay = document.getElementById('playerNameDisplay');
-
-    if (playerName) {
-        playerNameDisplay.textContent = playerName;
-    } else {
-        playerNameDisplay.textContent = "Joueur (Veuillez rentrez un nom à l'acceuil)";
-    }
-});
-
-</script>
-
-
 </body>
 </html>

@@ -1,8 +1,7 @@
 body {
     margin: 0px;
     font-family: 'Times New Roman';
-    /*overflow: hidden; défilement caché*/
-    position: relative; /*pour positionner les éléments enfants*/
+    position: relative;
 }
 h1, h2{
     text-align: center;
@@ -21,7 +20,6 @@ h1, h2, h3{
 
 .container-classement{
     grid-template-columns: repeat(3, 1fr);
-    /*grid-template-rows: repeat(4, 1fr);*/
     grid-template-rows: auto auto auto;
 }
 
@@ -101,11 +99,10 @@ button {
     font-weight: 600; /*gras du texte*/
     padding: 20px;
     margin: 80px auto;
-    min-width: 150px; /*largeur minimale*/
+    min-width: 150px;
     position: relative;
-    /*bordure*/
     border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 1); /*ombre*/
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 1);
 }
 
 
@@ -120,7 +117,7 @@ button {
 
 /*styles lien*/
 .container a, .return-container a {  
-    text-decoration: none;/*enlève le soulignement des liens*/
+    text-decoration: none;/*enlève soulignement*/
 }
 
 /*enlève espaces haut cliquables*/
@@ -170,7 +167,7 @@ button {
 }
 
 .scores-list {
-    font-size: 27px; /* Taille de police agrandie */
+    font-size: 27px; /* taille score agrandie */
     color: black;
 }
 
@@ -206,11 +203,10 @@ button {
 
 
 .validation-container {
-    display: flex; /* Affiche les éléments en ligne */
-    justify-content: center; /* Centre horizontalement */
-    align-items: center; /* Centre verticalement */
-    gap: 10px; /* Espace entre le champ et le bouton */
-    margin: 0 auto; /* Centre le conteneur */
-    width: fit-content; /* Ajuste la largeur au contenu */
-    margin-top: -80px; /* Réduit la marge en bas du titre */
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    margin: auto;
+    margin-top: -90px;
+    gap: 25px
 }
