@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="website icon" type="png" href="image/logo.png">
+    <link rel="stylesheet" href="style_intro.css">
+    <title>Wars Star</title>
+</head>
+
+<body>
+<!-- Fond Ecran -->
+<div class="img1">
+</div>
+
+
+<!--Main Menu-->
+
+<div class="mainMenu">
+    <div class="div1">
+        <h1>Bienvenue sur Wars Star !</h1>
+        <h2> Voici les règles du jeu :</h2>
+        <h3> Vous jouez un vaisseau qui doit esquiver les vaisseaux ennemi et astres potentiels. <br>
+        Si vous touchez un vaisseau et/ou un astre, vous perdez la vie. <br>
+        Vous avez 3 modes de jeu : Facile, Difficile et Extrême. <br>
+        Le but est de survivre le plus longtemps possible en fonction du mode choisi. <br>
+        Vous êtes dans un univers lointain et infini (jusqu'à preuve du contraire)
+        Essayez de survivre le plus longtemps possible <br>
+        Et chaque bordure de l'écran est reliée à l'autre bordure, car ... c'est magique <br>
+        (ex : si vous sortez par la droite, vous réapparaissez à gauche). <br>
+        Bonne chance !<br> </h3>
+        <h2>Entrez votre numéro de capitaine (ou pseudo) </h2>
+        <div class="validation-container">
+            <input type="text" id="playerName" placeholder="Ecrivez ici"  pattern="[A-Za-z0-9\s\-_]{1,20}"">
+            </input>
+            <button id="validerValidation">Valider</button>
+        </div>
+        
+    </div>
+    <div class="div2"> 
+        <h2> Accés au Mode Facile : </h2>
+        <div class="container">
+        <a href="jeu_facile.html"><button>Jeu Facile</button></a>
+        </div>
+    </div>
+
+
+    <div class="div3">
+        <h2> Accés au Mode Difficile :</h2>
+        <div class="container">
+        <a href="jeu_difficile.html"><button>Jeu Difficile</button></a>
+        </div>
+    </div>
+
+    <div class="div4">
+        <h2> Accés au Mode Extreme :</h2>
+        <div class="container">
+        <a href="jeu_extreme.html"><button>Jeu Extreme</button></a>
+        </div>
+    </div>
+
+    <div class="div5">
+    <h2> Accés au Classement:</h2>
+        <div class="container">
+        <a href="classement.html"><button>Classement</button></a>
+        </div>
+    </div>
+    <div class="div6">
+        <div class="container">
+            <a href="image/Rapport.pdf" download><button>Télécharger le rapport</button></a>
+        </div>
+    </div>
+</div>
+
+</body>
+<script src="script_intro.js"></script>
+</html>

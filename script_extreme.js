@@ -210,7 +210,7 @@ function CreationPop() {
             <h2>Vous avez perdu</h2>
             <button id="rejouer">Rejouer</button>
             <h2>Vous ne voulez pas rejouer</h2>
-            <a href="index2.html"><button>Ecran d'accueil</button></a>
+            <a href="index.html"><button>Ecran d'accueil</button></a>
         </div>
         `;
 
