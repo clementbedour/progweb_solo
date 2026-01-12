@@ -46,7 +46,7 @@ if (document.getElementById('validerValidation')) {
         if (nameInput.checkValidity()) {
             localStorage.setItem('playerName', nameInput.value);
         } else {
-            alert("Veuillez entrer un pseudo valide !!!!");
+            alert("Veuillez entrer un pseudo valide ! Caractères autorisés : lettres, chiffres, espaces, underscores. Pas de caractères spéciaux et d'accents.");
         }
     });
 }

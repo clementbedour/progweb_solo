@@ -17,3 +17,13 @@ https://developer.mozilla.org/en-US/docs/Games/Tutorials/2D_Breakout_game_pure_J
 https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/animation-play-state
 https://developer.mozilla.org/fr/docs/Web/API/Document/createElement
 https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Global_Objects/JSON/parse
+
+# Compte Instagram : 
+coding.stella
+katy_v4
+julien_webxpansion
+setupsai
+alaa.alaff
+thmsvlra
+premi_coding
+…
