@@ -1,6 +1,7 @@
 # progweb2
 Création d'un jeu pour un projet à l'INSA
 Lien GitHub https://github.com/clementbedour/progweb_solo
+Lien Internet : https://etud.insa-toulouse.fr/~bedour/
 
 # Source
 https://cssgridgenerator.io/ 
